@@ -1,0 +1,33 @@
+<div class="container w-1/2 p-4">
+  <p-table [value]="documents()" [tableStyle]="{ 'min-width': '100%' }">
+    <ng-template #header>
+      <tr>
+        <th class="pointer-events-none">Список документов</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-documentUntyped>
+      @let document = asDocument(documentUntyped);
+      <tr>
+        <td>
+          <div class="flex gap-2">
+            <div>
+              {{ document.name }}
+            </div>
+            <div class="flex-1 dot-line-container">
+              <span class="dot-line-content"></span>
+            </div>
+          </div>
+        </td>
+        <td width="100px">
+          <p-button
+            label="Просмотр"
+            icon="pi pi-eye"
+            variant="text"
+            [routerLink]="['/document', document.id]"
+          />
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.dot-line-container {
+  border-bottom: 1px dashed #e0e0e0;
+  pointer-events: none;
+}
+
+.dot-line-content {
+  display: block;
+  width: 100%;
+  height: 1rem;
+}
