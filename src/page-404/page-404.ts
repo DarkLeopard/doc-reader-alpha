@@ -7,5 +7,6 @@ import { ButtonModule } from 'primeng/button';
   imports: [ButtonModule, RouterLink],
   templateUrl: './page-404.html',
   styleUrl: './page-404.scss',
+  standalone: true,
 })
 export class Page404 {}
