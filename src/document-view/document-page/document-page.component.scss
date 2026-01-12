@@ -1,0 +1,22 @@
+.page-container {
+  position: relative;
+  display: inline-block;
+  background-color: var(--p-surface-0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: crosshair;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid var(--p-primary-color, #3b82f6);
+    outline-offset: 2px;
+  }
+}
+
+.page-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}

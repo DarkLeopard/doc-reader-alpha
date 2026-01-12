@@ -1,0 +1,9 @@
+<div class="page-container" [appAnnotations]="pageNumber()">
+  <img
+    class="page-image"
+    draggable="false"
+    loading="lazy"
+    [src]="imageUrl()"
+    [alt]="'Страница ' + pageNumber() + ' документа ' + documentName()"
+  />
+</div>

@@ -1,0 +1,34 @@
+@if (document(); as doc) {
+<div class="document-view">
+  <div class="toolbar">
+    <div class="zoom-controls">
+      <p-button
+        icon="pi pi-minus"
+        [rounded]="true"
+        [disabled]="!canZoomOut()"
+        (click)="zoomOut()"
+      />
+      <span class="zoom-value">
+        {{ zoomPercent() }}
+      </span>
+      <p-button
+        icon="pi pi-plus"
+        [rounded]="true"
+        [disabled]="!canZoomIn()"
+        (click)="zoomIn()"
+      />
+    </div>
+    <p-button label="Сохранить" icon="pi pi-save" (click)="saveDocument()" />
+  </div>
+
+  <div class="document-container" [style.zoom]="zoom() / 100">
+    @for (page of doc.pages; track page.number) {
+    <app-document-page
+      [pageNumber]="page.number"
+      [imageUrl]="page.imageUrl"
+      [documentName]="doc.name"
+    />
+    }
+  </div>
+</div>
+}

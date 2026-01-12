@@ -1,0 +1,56 @@
+.annotation {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: move;
+  z-index: 10;
+  user-select: none;
+  transition: opacity 0.2s ease, z-index 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid var(--p-primary-color, #3b82f6);
+    outline-offset: 2px;
+    border-radius: var(--p-border-radius, 6px);
+  }
+
+  &.dragging {
+    z-index: 20;
+    opacity: 0.8;
+    cursor: grabbing;
+  }
+
+  &:hover:not(.dragging) {
+    z-index: 15;
+  }
+}
+
+.annotation-content {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  background-color: lightyellow;
+  border: 2px solid black;
+  border-radius: var(--p-border-radius, 6px);
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  min-width: 100px;
+  max-width: 200px;
+  max-height: 150px;
+  overflow-y: auto;
+  transition: box-shadow 0.2s ease;
+
+  .annotation:hover & {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.annotation-text {
+  flex: 1;
+  font-size: 0.875rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: black;
+  font-weight: 500;
+  min-width: 0;
+  overflow-y: auto;
+  max-height: 100%;
+}

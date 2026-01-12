@@ -1,0 +1,21 @@
+<div
+  class="annotation"
+  [attr.data-id]="annotation().id"
+  [style.left.%]="annotation().x"
+  [style.top.%]="annotation().y"
+  [class.dragging]="isDragging()"
+  (mousedown)="onDragStart($event)"
+  (click)="onClick($event)"
+>
+  <div class="annotation-content">
+    <span class="annotation-text">{{ annotation().text }}</span>
+    <p-button
+      size="small"
+      icon="pi pi-times"
+      severity="danger"
+      [rounded]="true"
+      [text]="true"
+      (click)="onDelete($event)"
+    />
+  </div>
+</div>
